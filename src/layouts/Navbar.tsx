@@ -26,9 +26,9 @@ const Navbar = ({ handleLight, handleDark }: Props) => {
 					<input
 						type="text"
 						placeholder="Search..."
-						className="h-12 pl-7 gap-8 rounded-3xl text-darkGray text-sm font-normal w-64 border border-border focus:outline-none dark:border-darkStroke dark:bg-darkBg"
+						className="h-10 pl-7 gap-8 rounded-3xl text-darkGray text-sm font-normal w-64 border border-border focus:outline-none dark:border-darkStroke dark:bg-darkBg"
 					/>
-					<span className="absolute left-6 top-4">
+					<span className="absolute left-6 top-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="18"
