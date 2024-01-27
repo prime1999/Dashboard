@@ -1,4 +1,3 @@
-import { MdMenu } from "react-icons/md";
 import user from "/png/user.png";
 // shadcn component
 import {
@@ -9,19 +8,25 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import MobileSideBar from "./MobileSideBar";
 
-const Navbar = ({ handleMobileNav, mobile }: any) => {
+type Props = {
+	handleLight: any;
+	handleDark: any;
+};
+
+const Navbar = ({ handleLight, handleDark }: Props) => {
 	return (
-		<div className="px-4 py-4 w-full flex items-center justify-between bg-background">
+		<div className="px-4 py-4 w-full flex items-center justify-between">
 			<h1 className="font-plus font-semibold text-xl text-head dark:text-darkGray">
 				Dashboard
 			</h1>
-			<div className="hidden items-center justify-between lg:flex">
-				<form className="relative flex w-96 px-4">
+			<div className="hidden ml-40 items-center justify-between lg:flex">
+				<form className="relative flex px-4">
 					<input
 						type="text"
 						placeholder="Search..."
-						className="h-12 pl-7 gap-8 rounded-3xl text-darkGray text-sm font-normal w-full border border-border focus:outline-none"
+						className="h-12 pl-7 gap-8 rounded-3xl text-darkGray text-sm font-normal w-64 border border-border focus:outline-none dark:border-darkStroke dark:bg-darkBg"
 					/>
 					<span className="absolute left-6 top-4">
 						<svg
@@ -67,7 +72,7 @@ const Navbar = ({ handleMobileNav, mobile }: any) => {
 					<p className="ml-2 font-medium text-sm dark:text-darkGray">
 						November 15, 2023
 					</p>
-					<button className="border border-border rounded-full p-2 mx-4">
+					<button className="border border-border rounded-full p-2 mx-4 dark:border-darkStroke dark:bg-darkBg">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="20"
@@ -84,7 +89,7 @@ const Navbar = ({ handleMobileNav, mobile }: any) => {
 						</svg>
 					</button>
 				</div>
-				<div className="flex items-center border border-border rounded-3xl px-2 py-1 gap-2">
+				<div className="flex items-center border border-border rounded-3xl px-2 py-1 gap-2  dark:border-darkStroke dark:bg-darkBg">
 					<img src={user} alt="user's pic" />
 					<div className="text-sm text-right font-inter dark:text-darkGray">
 						<h4 className="font-normal text-md text-head dark:text-darkGray">
@@ -109,7 +114,7 @@ const Navbar = ({ handleMobileNav, mobile }: any) => {
 								</svg>
 							</button>
 						</DropdownMenuTrigger>
-						<DropdownMenuContent className="border-0 shadow-sm shadow-foreground mr-4 mt-4">
+						<DropdownMenuContent className="bg-transparent border-0 shadow-foreground mr-4 mt-4 backdrop-blur dark:border-darkStroke dark:bg-transparent">
 							<DropdownMenuLabel>My Account</DropdownMenuLabel>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="cursor-pointer">
@@ -128,14 +133,9 @@ const Navbar = ({ handleMobileNav, mobile }: any) => {
 					</DropdownMenu>
 				</div>
 			</div>
-			<button
-				onClick={handleMobileNav}
-				className={`absolute duration-700 ${
-					mobile ? "right-20" : "right-3"
-				} lg:hidden`}
-			>
-				<MdMenu />
-			</button>
+			<div className="lg:hidden">
+				<MobileSideBar handleLight={handleLight} handleDark={handleDark} />
+			</div>
 		</div>
 	);
 };

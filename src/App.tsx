@@ -2,10 +2,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 //layouts components
 import SideBar from "@/layouts/SideBar";
 import Dashboard from "@/components/Dashboard";
-import { useState } from "react";
 
 function App() {
-	const [mobile, setMobile] = useState<boolean>(false);
 	// for light mode
 	const lightMode = () => {
 		if (document.documentElement.classList.contains("dark")) {
@@ -25,23 +23,15 @@ function App() {
 		}
 	};
 
-	const handleMobileNav = () => {
-		setMobile(!mobile);
-	};
-
 	return (
 		<>
 			<Router>
 				<div className="flex font-inter">
-					<div className="sticky">
-						<SideBar
-							mobile={mobile}
-							handleLight={lightMode}
-							handleDark={darkMode}
-						/>
+					<div className="hidden sticky lg:flex">
+						<SideBar handleLight={lightMode} handleDark={darkMode} />
 					</div>
 					<div className="w-full h-screen overflow-auto">
-						<Dashboard mobile={mobile} handleMobileNav={handleMobileNav} />
+						<Dashboard handleLight={lightMode} handleDark={darkMode} />
 					</div>
 				</div>
 			</Router>

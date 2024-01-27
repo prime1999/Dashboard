@@ -1,12 +1,26 @@
+import { useToast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
+
 const ProgressBars = () => {
+	const { toast } = useToast();
 	return (
-		<div className="w-full rounded-2xl border border-stroke bg-white p-4 dark:bg-transparent lg:w-[40%]">
+		<div className="w-full rounded-2xl border border-stroke bg-white p-4 dark:border-darkStroke dark:bg-darkBg lg:w-[40%]">
 			<div className="w-full font-plus text-lg">
 				<div className="flex items-center justify-between mt-4 font-plus text-lg">
 					<h4 className="text-[#26282C] dark:text-darkGray font-semibold">
 						Top Platform
 					</h4>
-					<p className="text-green cursor-pointer font-medium">See All</p>
+					<button
+						onClick={() => {
+							toast({
+								title: "",
+								description: "No more platforms to sow",
+							});
+						}}
+						className="text-green cursor-pointer font-medium"
+					>
+						See All
+					</button>
 				</div>
 				<div className="w-full mt-4 mb-8">
 					<h4 className="text-[#22242C] font-semibold dark:text-gray">
@@ -45,6 +59,7 @@ const ProgressBars = () => {
 					</div>
 				</div>
 			</div>
+			<Toaster />
 		</div>
 	);
 };

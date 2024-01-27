@@ -33,6 +33,8 @@ module.exports = {
 				lightBlue: "#54C5EB",
 				orange: "#FFB74A",
 				stroke: "#EDF2F7",
+				darkStroke: "#27272A",
+				darkBg: "#09090B",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
 				background: "hsl(var(--background))",

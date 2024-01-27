@@ -6,18 +6,31 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
+import { useToast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 // component
 import { users } from "@/UserData";
 
 const UserTable = () => {
+	const { toast } = useToast();
 	return (
-		<div className="w-full rounded-2xl border border-stroke bg-white p-2 dark:bg-transparent lg:w-[60%]">
+		<div className="w-full rounded-2xl border border-stroke bg-white p-2 dark:border-darkStroke dark:bg-darkBg lg:w-[60%]">
 			<div className="flex items-center justify-between mt-4 px-2 font-plus text-lg">
 				<h4 className="text-[#26282C] dark:text-darkGray font-semibold">
 					Last Orders
 				</h4>
-				<p className="text-green cursor-pointer font-medium">See All</p>
+				<button
+					onClick={() => {
+						toast({
+							title: "",
+							description: "No more orders to show",
+						});
+					}}
+					className="text-green cursor-pointer font-medium"
+				>
+					See All
+				</button>
 			</div>
 			<Table>
 				<TableHeader>
@@ -81,6 +94,7 @@ const UserTable = () => {
 						))}
 				</TableBody>
 			</Table>
+			<Toaster />
 		</div>
 	);
 };

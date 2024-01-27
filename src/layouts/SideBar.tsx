@@ -5,16 +5,11 @@ import ThemeButtons from "../components/ThemeButtons";
 type Props = {
 	handleLight: any;
 	handleDark: any;
-	mobile: boolean;
 };
 
-const SideBar = ({ handleLight, handleDark, mobile }: Props) => {
+const SideBar = ({ handleLight, handleDark }: Props) => {
 	return (
-		<div
-			className={`w-[80px] h-screen border-r border-stroke duration-500 flex overflow-auto ${
-				mobile ? "ml-0 opacity-100" : "-ml-20 opacity-0"
-			} flex-col items-center py-5 lg:flex lg:opacity-100 lg:-ml-0`}
-		>
+		<div className="w-[80px] h-screen border-stroke duration-500 overflow-auto flex flex-col items-center py-5 lg:-ml-0 lg:border-r dark:border-darkStroke dark:lg:bg-darkBg">
 			<img src={vector} alt="dashboard" className="w-10 h-10" />
 			{/* category icon */}
 			<Link

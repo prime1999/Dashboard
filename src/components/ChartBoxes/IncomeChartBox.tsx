@@ -1,7 +1,7 @@
 const IncomeChartBox = () => {
 	return (
 		<>
-			<div className="bg-white rounded-lg border border-stroke p-4 w-full dark:bg-transparent md:w-1/2">
+			<div className="bg-white rounded-lg border border-stroke p-4 w-full dark:border-darkStroke dark:bg-darkBg md:w-1/2">
 				<div className="flex justify-between ">
 					<span className="border rounded-full border-stroke p-2">
 						<svg

@@ -14,17 +14,22 @@ import IncomeChartBox from "./ChartBoxes/IncomeChartBox";
 import UserTable from "./UserTable";
 import ProgressBars from "./ProgressBars";
 
-const Dashboard = ({ handleMobileNav, mobile }: any) => {
+type Props = {
+	handleLight: any;
+	handleDark: any;
+};
+
+const Dashboard = ({ handleLight, handleDark }: Props) => {
 	return (
 		<div className="mb-4">
-			<div className="sticky z-50 w-full top-0 left-18 bg-gray border-b border-border">
-				<Navbar mobile={mobile} handleMobileNav={handleMobileNav} />
+			<div className="sticky z-50 w-full top-0 backdrop-blur border-b border-border">
+				<Navbar handleLight={handleLight} handleDark={handleDark} />
 			</div>
 			<div className="flex flex-col px-4 mt-4 lg:flex-row">
-				<div className="w-full rounded-2xl border border-stroke bg-white p-2 dark:bg-transparent lg:w-[60%]">
-					<div className="flex justify-between items-center px-4 mb-4">
+				<div className="w-full rounded-2xl border border-stroke p-2 lg:w-[60%] dark:border-darkStroke dark:bg-darkBg">
+					<div className="flex flex-col justify-between px-4 my-4 md:flex-row md:items-center">
 						<h4 className="font-[600] font-plus">Sales Trend</h4>
-						<div className="flex items-center">
+						<div className="flex items-center justify-between mt-4 md:mt-0">
 							<p className="font-plus font-[500] text-md text-[#3A3F51] dark:text-gray">
 								Sort by:
 							</p>
