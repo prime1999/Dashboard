@@ -6,6 +6,15 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+// components
 import { useToast } from "@/components/ui/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -88,7 +97,21 @@ const UserTable = () => {
 											className="fill-[#292D32] dark:fill-darkGray"
 										/>
 									</svg>
-									<p className="font-plus font-normal ml-2">View</p>
+									<Dialog>
+										<DialogTrigger>
+											<button className="font-plus font-normal ml-2">
+												View
+											</button>
+										</DialogTrigger>
+										<DialogContent className="w-96 dark:border-darkStroke dark:bg-darkBg">
+											<DialogHeader>
+												<DialogTitle>Invoice Sent</DialogTitle>
+												<DialogDescription>
+													Invoice for {user.name} has been sent to your mail
+												</DialogDescription>
+											</DialogHeader>
+										</DialogContent>
+									</Dialog>
 								</TableCell>
 							</TableRow>
 						))}

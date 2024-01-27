@@ -6,6 +6,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+// comonents
 import BarChart from "./BarChart";
 import ChartBox from "./ChartBoxes/ChartBox";
 import RefundChartBox from "./ChartBoxes/RefundChartBox";
@@ -37,22 +38,22 @@ const Dashboard = ({ handleLight, handleDark }: Props) => {
 								<SelectTrigger className="w-32 ml-4 rounded-full bg-transparent font-plus text-[#3A3F51] dark:text-gray">
 									<SelectValue placeholder="weekly" />
 								</SelectTrigger>
-								<SelectContent>
+								<SelectContent className="backdrop-blur bg-transparent">
 									<SelectItem
 										value="weekly"
-										className="font-plus text-[#3A3F51]"
+										className="font-plus text-[#3A3F51] cursor-pointer"
 									>
 										Weekly
 									</SelectItem>
 									<SelectItem
 										value="monthly"
-										className="font-plus text-[#3A3F51]"
+										className="font-plus text-[#3A3F51] cursor-pointer"
 									>
 										Monthly
 									</SelectItem>
 									<SelectItem
 										value="yearly"
-										className="font-plus text-[#3A3F51]"
+										className="font-plus text-[#3A3F51] cursor-pointer"
 									>
 										Yearly
 									</SelectItem>

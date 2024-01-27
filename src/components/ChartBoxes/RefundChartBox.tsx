@@ -3,7 +3,7 @@ const RefundChartBox = () => {
 		<>
 			<div className="bg-white rounded-lg mb-2 border border-stroke p-4 w-full dark:border-darkStroke dark:bg-darkBg md:mb-0 md:w-1/2">
 				<div className="flex justify-between ">
-					<span className="border rounded-full border-stroke p-2">
+					<span className="border rounded-full border-stroke p-2 dark:border-darkStroke dark:bg-darkBg">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"

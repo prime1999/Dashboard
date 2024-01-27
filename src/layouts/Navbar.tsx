@@ -89,7 +89,7 @@ const Navbar = ({ handleLight, handleDark }: Props) => {
 						</svg>
 					</button>
 				</div>
-				<div className="flex items-center border border-border rounded-3xl px-2 py-1 gap-2  dark:border-darkStroke dark:bg-darkBg">
+				<div className="flex w-fit items-center border border-border rounded-3xl px-2 py-1 gap-2  dark:border-darkStroke dark:bg-darkBg">
 					<img src={user} alt="user's pic" />
 					<div className="text-sm text-right font-inter dark:text-darkGray">
 						<h4 className="font-normal text-md text-head dark:text-darkGray">

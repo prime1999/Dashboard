@@ -5,6 +5,9 @@ const BarChart = () => {
 		chart: {
 			type: "bar",
 			height: 200,
+			toolbar: {
+				show: false,
+			},
 		},
 		plotOptions: {
 			bar: {
