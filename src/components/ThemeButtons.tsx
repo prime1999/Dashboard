@@ -1,6 +1,6 @@
 const ThemeButtons = ({ handleLight, handleDark }: any) => {
 	return (
-		<div className="flex flex-col gap-2 bg-white p-2 rounded-t-[100px] rounded-b-[100px]">
+		<div className="flex flex-col gap-2 bg-white p-2 rounded-t-[100px] rounded-b-[100px] dark:bg-transparent">
 			<button
 				onClick={handleLight}
 				className="flex justify-center items-center mx-auto rounded-[100%] w-10 h-10 dark:p-2 bg-green py-[6.563px] px-[7.5px] dark:bg-transparent"

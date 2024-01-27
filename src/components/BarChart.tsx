@@ -57,6 +57,11 @@ const BarChart = () => {
 					fontWeight: 600,
 				},
 			},
+			stroke: {
+				show: true,
+				width: 2, // width of the line
+				dashArray: 5, // length of each dash in the line
+			},
 		},
 		yaxis: {
 			labels: {
